@@ -1,7 +1,7 @@
 import {
   FETCH_START,
   FETCH_SUCCESS,
-  FETCH_ERROR,
+  SET_ERROR,
   ADDING_SMURF,
   ERROR,
 } from "./../actions";
@@ -37,7 +37,7 @@ const reducer = (state = initialState, action) => {
       };
     case ERROR:
       return { ...state, smurfs: [], isLoading: false, error: action.payload };
-    case FETCH_ERROR:
+    case SET_ERROR:
       return {
         ...state,
         smurfs: [],
